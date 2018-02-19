@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title>Spring Security Example</title>
+	<style>
+body {
+    background-color: lightblue;
+    text-align: center;
+}
+
+h1 {
+    color: white;
+    font-size:300%;
+   
+}
+
+p {
+    font-family: verdana;
+    font-size: 20px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+    padding-left:7%;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+
+</style>
+
+    </head>
+    <body>
+         <ul>
+  <li> <a class="active" th:href="@{/home}">Home</a></li>
+  <li> <a  th:href="@{/micro}">Application</a></li>
+  <li> <a th:href="@{/about}">About</a></li> 
+  <li style="float:right;">  <form th:action="@{/logout}" method="post"> <input style="background:black; color:white; padding-bottom:10%" type="submit" value="Sign Out"/></form></li> 
+</ul>
+        <h1>Welcome!</h1>
+
+        <p>Click <a th:href="@{/micro}">here</a> to select the service</p>
+    </body>
+</html>
