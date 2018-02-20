@@ -4,7 +4,7 @@ pipeline {
     
      agent {
        
-        docker 'gradle:3.4.1' 
+        docker 'gradle' 
            }
 
     stages {
