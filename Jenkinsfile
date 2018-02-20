@@ -2,7 +2,11 @@
 
 pipeline {
     
-    agent any
+    agent {
+        docker{
+            gradle
+              }
+          }
     
     stages {
         stage('Build') {
