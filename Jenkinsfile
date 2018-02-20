@@ -7,7 +7,8 @@ pipeline {
         docker {
             image 'gradle'
             args '-u root'
-            //sh 'chmod 666 /var/run/docker.sock
+            sh 'chmod 666 /var/run/docker.sock'
+           // sh 'sudo usermod -a -G docker USERNAME'
         }
     }
     
