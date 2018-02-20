@@ -21,7 +21,7 @@ pipeline {
             steps {
                 echo 'Delivering...'
                 sh 'java -jar build/libs/gs-securing-web-0.1.0.jar '
-                sh 'curl -X POST http://localhost:9999/shutdown || true'
+                
             }
         }
     }
