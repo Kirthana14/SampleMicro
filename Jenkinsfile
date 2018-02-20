@@ -2,12 +2,7 @@
 
 pipeline {
 
-      agent {
-        docker {
-            image 'gradle'
-            args '-u root'
-        }
-    }
+     agent any
 
     stages {
         stage('Build') {
@@ -16,9 +11,9 @@ pipeline {
                 sh 'gradle build'
             }
         }
-        stage('Test') {
+        stage('Deploy') {
             steps {
-                echo 'Testing...'
+                echo 'Deploying...'
                 sh 'java -jar build/libs/gs-securing-web-0.1.0.jar'
             }
         }
