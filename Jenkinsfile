@@ -2,7 +2,12 @@
 
 pipeline {
 
-  
+      agent {
+        docker {
+            image 'gradle'
+            args '-u root'
+        }
+    }
 
     stages {
         stage('Build') {
