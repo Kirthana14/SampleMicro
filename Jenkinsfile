@@ -6,12 +6,13 @@ pipeline {
     
     stages {
          stage("Gradle") {
+              steps {
+                sh ' chmod 666 /var/run/docker.sock'
+                    }
              agent {
                 docker 'gradle'
                    }
-               steps {
-                sh ' chmod 666 /var/run/docker.sock'
-                    }
+              
          }
         stage('Build') {
             steps {
