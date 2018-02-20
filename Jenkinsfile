@@ -10,7 +10,7 @@ pipeline {
                 docker 'gradle'
                    }
                steps {
-                sh ' usermod -a -G docker $USER'
+                sh ' chmod 666 /var/run/docker.sock'
                     }
          }
         stage('Build') {
