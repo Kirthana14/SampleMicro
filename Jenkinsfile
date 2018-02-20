@@ -2,16 +2,13 @@
 
 pipeline {
     
-    agent {
-        docker 'gradle'
-             
-          }
+    agent any
     
     stages {
         stage('Build') {
             steps {
                 echo 'Building...'
-                sh 'gradle build'
+                sh 'gradle install'
             }
         }
         stage('Deploy') {
