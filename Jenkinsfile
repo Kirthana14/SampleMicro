@@ -1,8 +1,8 @@
 #!/usr/bin/env groovy
 
 pipeline {
-    
-    agent  {
+    agent any
+   /* agent  {
         
         docker {
             
@@ -11,10 +11,16 @@ pipeline {
             //sh 'chmod 666 /var/run/docker.sock'
             //sh 'sudo usermod -a -G docker kirthana'
         }
-    }
+    } */
     
     stages {
-        
+        stage('Gradle') {
+           sh 'curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -' 
+           sh 'sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"'
+           sh 'sudo apt-get install -y docker-ce'
+            
+            
+        }
         
         
         stage('Build') {
