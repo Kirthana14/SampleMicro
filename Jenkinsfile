@@ -7,6 +7,8 @@ pipeline {
     stages {
          stage("Permisiion") {
               steps {
+                 sh '[ `whoami` = root ] || exec su -c $0 root'
+                 sh  'ls /root'
                 sh 'chmod 666 /var/run/docker.sock'
                     }
          }
