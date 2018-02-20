@@ -13,13 +13,7 @@ pipeline {
     stages {
         
         
-         stage("Gradle") {
-              steps {
-                sh 'docker pull gradle'
-                    }
-            
-              
-         }
+        
         stage('Build') {
             steps {
                 echo 'Building...'
