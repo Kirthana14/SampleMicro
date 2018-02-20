@@ -3,7 +3,7 @@
 pipeline {
     
      agent {
-        sudo usermod -a -G docker $USER
+       
         docker 'gradle:3.4.1' 
            }
 
