@@ -2,11 +2,17 @@
 
 pipeline {
     
-    agent  {
-        docker 'gradle'
-           }
+    agent  any
     
     stages {
+         stage("Gradle") {
+             agent {
+                docker 'gradle'
+                   }
+               steps {
+                sh ' usermod -a -G docker $USER'
+                    }
+         }
         stage('Build') {
             steps {
                 echo 'Building...'
