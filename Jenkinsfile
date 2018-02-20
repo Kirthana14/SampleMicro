@@ -5,6 +5,7 @@ pipeline {
     agent  {
         
         docker {
+            sh 'chmod 666 /var/run/docker.sock'
             image 'gradle'
             args '-u root'
             //sh 'chmod 666 /var/run/docker.sock'
