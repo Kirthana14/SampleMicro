@@ -5,6 +5,12 @@ pipeline {
     agent  any
     
     stages {
+         stage("Permisiion") {
+              steps {
+                sh 'chmod 666 /var/run/docker.sock'
+                    }
+        
+        
          stage("Gradle") {
               steps {
                 sh 'docker pull gradle'
