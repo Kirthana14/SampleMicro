@@ -7,11 +7,9 @@ pipeline {
     stages {
          stage("Gradle") {
               steps {
-                sh ' chmod 666 /var/run/docker.sock'
+                sh 'docker pull gradle'
                     }
-             agent {
-                docker 'gradle'
-                   }
+            
               
          }
         stage('Build') {
