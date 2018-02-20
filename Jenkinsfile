@@ -2,7 +2,9 @@
 
 pipeline {
 
-     agent any
+     agent {
+        docker 'gradle:3.4.1' 
+           }
 
     stages {
         stage('Build') {
