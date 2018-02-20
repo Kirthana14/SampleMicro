@@ -1,9 +1,7 @@
 #!/usr/bin/env groovy
 
 pipeline {
-  /*  agent {
-        docker 'gradle'
-    }
+    agent any
    /* agent  {
         
         docker {
@@ -14,7 +12,7 @@ pipeline {
             //sh 'sudo usermod -a -G docker kirthana'
         }
     } */
-    */
+    
     stages {
        
         
