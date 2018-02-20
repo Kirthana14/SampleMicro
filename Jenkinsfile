@@ -3,9 +3,8 @@
 pipeline {
     
     agent {
-        docker{
-            gradle
-              }
+        docker 'gradle'
+             
           }
     
     stages {
