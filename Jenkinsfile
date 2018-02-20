@@ -14,14 +14,7 @@ pipeline {
     } */
     
     stages {
-        stage('Gradle') {
-            steps{
-          
-           sh 'sudo apt-get install -y docker-ce'
-            } 
-            
-        }
-        
+       
         
         stage('Build') {
             steps {
