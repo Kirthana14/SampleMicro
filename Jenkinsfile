@@ -32,15 +32,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Delivering...'
-               // sh 'java -jar build/libs/gs-securing-web-0.1.0.jar '
-               sh' java -jar build/libs/gs-securing-web-0.1.0.jar &'      # Send it to the background
-                MyPID=$!                        # Record PID
-                echo $MyPID                     # Print to terminal
-                # Do stuff
-                sh 'kill $MyPID '
-               
-                
-            }
+               sh 'java -jar build/libs/gs-securing-web-0.1.0.jar '
+               }
         }
     }
 }
