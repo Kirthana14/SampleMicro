@@ -24,7 +24,7 @@ pipeline {
                 stage('Test') {
             steps {
                 echo 'Testing'
-                sh 'java -jar build/libs/gs-securing-web-0.1.0.jar '
+                sh 'java -jar build/libs/gs-securing-web-0.1.0.jar && gradle –stop  '
                 sh 'curl -X POST localhost:9999/shutdown'
                 
             }
