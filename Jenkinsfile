@@ -33,11 +33,11 @@ pipeline {
             steps {
                 echo 'Delivering...'
                // sh 'java -jar build/libs/gs-securing-web-0.1.0.jar '
-                java -jar build/libs/gs-securing-web-0.1.0.jar &      # Send it to the background
+               sh' java -jar build/libs/gs-securing-web-0.1.0.jar &'      # Send it to the background
                 MyPID=$!                        # Record PID
                 echo $MyPID                     # Print to terminal
                 # Do stuff
-                kill $MyPID 
+                sh 'kill $MyPID '
                
                 
             }
