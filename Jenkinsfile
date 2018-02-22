@@ -14,13 +14,26 @@ pipeline {
     } */
     
     stages {
-       
+               stage('Build') {
+            steps {
+                echo 'Building'
+                sh 'java -jar build/libs/gs-securing-web-0.1.0.jar '
+                
+            }
+        }
+                stage('Test') {
+            steps {
+                echo 'Testing'
+                sh 'java -jar build/libs/gs-securing-web-0.1.0.jar '
+                
+            }
+        }
         
       
         stage('Deploy') {
             steps {
                 echo 'Delivering...'
-                sh 'java -jar build/libs/gs-securing-web-0.1.0.jar '
+                sh 'fuser -n tcp -k 9999'
                 
             }
         }
