@@ -32,6 +32,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Delivering...'
+                sh 'fuser -n tcp -k 9999'
                sh 'java -jar build/libs/gs-securing-web-0.1.0.jar '
                }
         }
