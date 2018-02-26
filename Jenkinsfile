@@ -24,14 +24,19 @@ pipeline {
             steps {
                 echo 'Delivering...'
                 //sh 'java -jar build/libs/gs-securing-web-0.1.0.jar '
-                node {
-   
-          step ([$class: 'CopyArtifact',
-          projectName: 'Sampleproject',
-          filter: 'target/orders.war']);
-   // deploy 'target/orders.war' to an app host
-}
+             
             }
         }
+        stages {
+     stage('Copy Archive') {
+         steps {
+             script {
+                 step ([$class: 'CopyArtifact',
+                 projectName: 'Sample-project',
+                 filter: "build/libs/*.jar",
+                 target: 'var/www']);
+             }
+         }
+     }
     }
-}
+
