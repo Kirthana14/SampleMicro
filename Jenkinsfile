@@ -2,16 +2,7 @@
 
 pipeline {
     agent any
-   /* agent  {
-        
-        docker {
-            
-            image 'gradle'
-            args '-u root'
-            //sh 'chmod 666 /var/run/docker.sock'
-            //sh 'sudo usermod -a -G docker kirthana'
-        }
-    } */
+  
     
     stages {
                stage('Build') {
